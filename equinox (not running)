@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    string eq = "EQUINOX";
+    while(t--) {
+        int n, a, b;
+        cin >> n >> a >> b;
+        char ar[n];
+        for(int i=0; i<n; i++) {
+            string k;
+            cin >> k;
+            if(k.length() != 0) {
+                ar[i] = k[0];
+            }
+        }
+        int sarthak, anuradha;
+        sarthak = anuradha = 0;
+        for(int i=0; i<n; i++) {
+            int x=0;
+            for(int j=0; j<eq.length(); j++) {
+                if(ar[i] == eq[j]) {
+                    x=1;
+                    break;
+                }else{
+                    x=0;
+                }
+            }
+            if(x == 0) {
+                anuradha += b;
+            }else{
+                sarthak += a;
+            }
+        }
+        if(sarthak == anuradha) {
+            std::cout << "DRAW";
+        }else if(sarthak > anuradha) {
+            std::cout << "SARTHAK";
+        }else{
+            cout << "ANURADHA";
+        }
+        cout << std::endl;
+    }
+    return 0;
+}
