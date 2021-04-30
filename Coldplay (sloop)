@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin >> t;
+	while(t--) {
+		int m, s;
+		cin >> m >> s;
+		int count=0;
+		while(m > 0) {
+			if(m >= s){
+				m -= s;
+				count++;
+			}else{
+				break;
+			}
+		}
+		cout << count << endl;
+	}
+	return 0;
+}
